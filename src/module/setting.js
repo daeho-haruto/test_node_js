@@ -2,22 +2,22 @@ const today = Date.now();
 const todayPlus = today + 500;
 
 export class Setting {
-  totalTaskCount;
+  totalSimulationCount;
   maxTaskCount;
   maxSubtaskCount;
   result;
   constructor(
-    totalTaskCount,
+    totalSimulationCount,
     maxTaskCount,
     maxSubtaskCount
   ){
-    this.totalTaskCount = totalTaskCount;
+    this.totalSimulationCount = totalSimulationCount;
     this.maxTaskCount = maxTaskCount;
     this.maxSubtaskCount = maxSubtaskCount;
     this.result = ['SUCCESS', 'FAILURE', 'READY']
   }
   startSetting(api) {
-    for(let i=1; i<=this.totalTaskCount; i++) {
+    for(let i=1; i<=this.totalSimulationCount; i++) {
       const randomTaskCount = Math.floor(Math.random() * this.maxTaskCount + 1)
       for(let j=1; j<=randomTaskCount; j++) {
         const zeroOrOneOrTwo = Math.floor(Math.random() * 3)

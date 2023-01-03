@@ -9,6 +9,12 @@ app.use(cors({
 }));
 const PORT = 8000;
 
+/**
+ * Class - Setting
+ * totalSimulationCount - simulation 개수 ex)맨 앞에 1, 2, 2, 3 .. 정해주는
+ * maxTaskCount (랜덤) - 하나의 simulation 안에 들어갈 task 최대 개수
+ * maxSubtaskCount (랜덤) - 하나의 task 안에 들어갈 subTask 최대 개수
+ */
 const setting1 = new Setting(3, 5, 10);
 const api1 = setting1.startSetting({
   items: [],

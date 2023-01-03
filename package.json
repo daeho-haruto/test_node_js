@@ -1,0 +1,21 @@
+{
+  "name": "test_node_js",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-utils": "^1.2.21",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17"
+  }
+}

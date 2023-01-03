@@ -1,6 +1,6 @@
 import cors from 'cors';
 import express from "express";
-import { Setting } from "./setting.js";
+import { Setting } from "./module/setting.js";
 
 const app = express();
 app.use(cors({

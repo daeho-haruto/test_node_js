@@ -26,11 +26,11 @@ export class Setting {
           simulationEnvironment: "jcak:test",
           requester: 'jack',
           id: j,
-          name: `Test_${i} Task_${j}`,
+          name: `Task_${i}-${j}`,
           result: this.result[zeroOrOneOrTwo],
           testStatus: this.result[zeroOrOneOrTwo],
           environment: 'flab',
-          type: 'Demo-Test Type',
+          type: 'navigation',
           application: 'clody:lastest',
           config: 'clody:lastest',
           totalMetric: {

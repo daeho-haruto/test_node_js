@@ -9,7 +9,7 @@ app.use(cors({
 }));
 const PORT = 8000;
 
-const setting1 = new Setting(10, 10, 10);
+const setting1 = new Setting(3, 3, 10);
 const api1 = setting1.startSetting({
   items: [],
   total: 10,

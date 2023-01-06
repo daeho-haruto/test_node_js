@@ -1,5 +1,5 @@
 const today = Date.now();
-const todayPlus = today + 500;
+const todayPlus = today+32000;
 
 export class Setting {
   totalSimulationCount;
@@ -17,6 +17,7 @@ export class Setting {
     this.result = ['SUCCESS', 'FAILURE', 'READY']
   }
   startSetting(api) {
+    let taskID = 1;
     for(let i=1; i<=this.totalSimulationCount; i++) {
       const randomTaskCount = Math.floor(Math.random() * this.maxTaskCount + 1)
       for(let j=1; j<=randomTaskCount; j++) {
@@ -25,8 +26,8 @@ export class Setting {
           simulationId: i,
           simulationEnvironment: "jcak:test",
           requester: 'jack',
-          id: j,
-          name: `Task_${i}-${j}`,
+          id: taskID,
+          name: `Task_${i}-${taskID}`,
           result: this.result[zeroOrOneOrTwo],
           testStatus: this.result[zeroOrOneOrTwo],
           environment: 'flab',
@@ -61,6 +62,7 @@ export class Setting {
           currentIteration: 10,
           subTasks: []
         };
+        taskID++;
         const randomSubtaskCount = Math.floor(Math.random() * this.maxSubtaskCount + 1);
         for(let k=1; k<=randomSubtaskCount; k++){
           const subTask = {

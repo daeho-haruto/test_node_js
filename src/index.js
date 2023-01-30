@@ -15,7 +15,7 @@ const PORT = 8000;
  * maxTaskCount (랜덤) - 하나의 simulation 안에 들어갈 task 최대 개수
  * maxSubtaskCount (랜덤) - 하나의 task 안에 들어갈 subTask 최대 개수
  */
-const setting1 = new Setting(3, 5, 10);
+const setting1 = new Setting(5, 10, 10);
 const api1 = setting1.startSetting({
   items: [],
   total: 10,

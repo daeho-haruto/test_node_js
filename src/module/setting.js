@@ -35,9 +35,6 @@ export class Setting {
           application: 'clody:lastest',
           config: 'clody:lastest',
           totalMetric: {
-            mt1: '10',
-            mt2: '20',
-            mt3: '30'
           },
           metricStatus: this.result[zeroOrOneOrTwo],
           metricType: 'NON',
@@ -45,7 +42,7 @@ export class Setting {
             startPoint: {
               x: 10,
               y: 20,
-              yaw: 30
+              yaw: 3
             },
             endPoint: {
               x: 20,
@@ -68,11 +65,6 @@ export class Setting {
           const subTask = {
             id: k,
             dbUploadStatus: this.result[zeroOrOneOrTwo],
-            metric: {
-              mt1: '10',
-              mt2: '30',
-              mt3: '50'
-            },
             metricStatus: this.result[zeroOrOneOrTwo],
             result: this.result[zeroOrOneOrTwo],
             testStatus: this.result[zeroOrOneOrTwo]

@@ -7,7 +7,27 @@ app.use(cors({
   origin: true,
   credentials: true
 }));
+
 const PORT = 8000;
+
+const subTask = {
+  "id": "1",
+  "dbUploadStatus": "SUCCESS",
+  "metric": {
+    "mt1": "321",
+    "mt2": "132"
+  },
+  "metricStatus": "SUCCESS",
+  "result": "SUCCESS",
+  "testStatus": "SUCCESS",
+  "recordedDbUrl": "https://du4izlkxnef0k.cloudfront.net/task-12-1/database/database.db",
+  "rosbagUrl": "https://du4izlkxnef0k.cloudfront.net/task-12-1/rosbag/rosbag.zip",
+  "createAt": null,
+  "removedAt": null,
+  "updatedAt": null,
+  "startedAt": null,
+  "endedAt": null
+}
 
 /**
  * Class - Setting
@@ -23,24 +43,45 @@ const api1 = setting1.startSetting({
   size: 10
 });
 
+const api2 = setting1.startSetting({
+  items: [],
+  total: 10,
+  page: 1,
+  size: 9
+})
+
 /* / 접속시 나올 메시지 */
 app.get("/", (request, response) => { 
   response.send(`<h1>test</h1>`);
 });
 
-// app.get("/v1/tasks/1", (request, response) => {  
-//   // response.send(`<h1>hi simulations</h1>`);
-//   let queryData = url.parse(request.url, true).query;
+const scrollTest = false
 
-//   const iter =  queryData.iter;
-//   if(iter == '1') {
-//     response.send(subTask1);
-//   }
-// });
+let test = 0
+
+// setInterval(function() {
+//   test++
+//   console.log(test)
+// }, 3000);
 
 app.get("/v1/tasks", (request, response) => {
-  response.send(api1);
+  if(scrollTest){
+    if(test % 2 === 0){
+      response.send(api1);
+    }
+    else {
+      response.send(api2);
+    }
+  }
+  else {
+    response.send(api1)
+  }
 })
+
+app.get("/v1/tasks/1/", (request, response) => {  
+  let iter = request.query.iter;
+  response.send(subTask)
+});
 
 /* PORT에서 서버 구동 */
 app.listen(PORT, () => {
